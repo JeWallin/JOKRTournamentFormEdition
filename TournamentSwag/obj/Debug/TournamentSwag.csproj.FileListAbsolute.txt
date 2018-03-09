@@ -1,0 +1,10 @@
+C:\Users\JohannesWindows\source\repos\TournamentSwag\TournamentSwag\bin\Debug\TournamentSwag.exe.config
+C:\Users\JohannesWindows\source\repos\TournamentSwag\TournamentSwag\bin\Debug\TournamentSwag.exe
+C:\Users\JohannesWindows\source\repos\TournamentSwag\TournamentSwag\bin\Debug\TournamentSwag.pdb
+C:\Users\JohannesWindows\source\repos\TournamentSwag\TournamentSwag\obj\Debug\TournamentSwag.Form1.resources
+C:\Users\JohannesWindows\source\repos\TournamentSwag\TournamentSwag\obj\Debug\TournamentSwag.Properties.Resources.resources
+C:\Users\JohannesWindows\source\repos\TournamentSwag\TournamentSwag\obj\Debug\TournamentSwag.csproj.GenerateResource.Cache
+C:\Users\JohannesWindows\source\repos\TournamentSwag\TournamentSwag\obj\Debug\TournamentSwag.csproj.CoreCompileInputs.cache
+C:\Users\JohannesWindows\source\repos\TournamentSwag\TournamentSwag\obj\Debug\TournamentSwag.exe
+C:\Users\JohannesWindows\source\repos\TournamentSwag\TournamentSwag\obj\Debug\TournamentSwag.pdb
+C:\Users\JohannesWindows\source\repos\TournamentSwag\TournamentSwag\obj\Debug\TournamentSwag.csprojResolveAssemblyReference.cache

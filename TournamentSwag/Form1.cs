@@ -27,7 +27,7 @@ namespace TournamentSwag
             IRule BestOf5 = new BestOf(5);
 
             InitializeComponent();
-            this.BackColor = Color.DarkGoldenrod;
+            
 
             RulesBox.Items.Add(bestof1);
             RulesBox.Items.Add(bestof3);
@@ -148,7 +148,7 @@ namespace TournamentSwag
                         renderBox.Text = match.ToString();
                         if ( match.IsGameActive())
                         {
-                            renderBox.BackColor = Color.DarkCyan;
+                            renderBox.BackColor = ColorTranslator.FromHtml("#658944");
                         }
                         else
                         {
@@ -169,45 +169,8 @@ namespace TournamentSwag
 
             }
             
-                }
-
-        private void updateCurrentGames()
-        {
-            GameSelector.SelectedIndex = -1;
-            TeamsInGame.SelectedIndex = -1;
-            GameSelector.Items.Clear();
-            
-            GameSelector.Items.AddRange(tournament.GetActiveTournamnetNodes().ToArray());
         }
 
-        private void GameSelector_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if ( GameSelector.SelectedIndex != -1 )
-            {
-                object obj = GameSelector.SelectedItem;
-
-                MatchNode mn = (MatchNode)obj;
-
-                TeamsInGame.Items.Clear();
-
-                TeamsInGame.Items.AddRange(mn.GetTeams().ToArray());
-            }
-        }
-
-        private void GivePoints_Click(object sender, EventArgs e)
-        {
-            MatchNode match = (MatchNode)GameSelector.SelectedItem;
-            ITeam team = (ITeam)TeamsInGame.SelectedItem;
-            
-            if (match != null && team != null)
-            {
-
-                match.GiveTeamOnePoint(team);
-
-                MegaUpdate();
-            }
-
-        }
 
         private void Restart_Click(object sender, EventArgs e)
         {
@@ -238,9 +201,23 @@ namespace TournamentSwag
 
         public void MegaUpdate()
         {
-            updateCurrentGames();
             UpDateTeamList();
             UpdateTournamentVisuals();
+        }
+
+        private void RandomButton_Click(object sender, EventArgs e)
+        {
+
+            tournament.ShuffleTeams();
+            tournament.GenerateTournamentTree();
+            MegaUpdate();
+
+
+        }
+
+        private void RulesBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

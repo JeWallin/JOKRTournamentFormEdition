@@ -114,12 +114,19 @@ namespace Tournament.Tournament
                 rounds.Add(round);
             }
 
+
+            if (SingleEliminationTeamEntryPoints.Count >= 4 && SingleEliminationThirdPlaceFinal != null)
+            {
+                List<MatchNode> thirdplace = new List<MatchNode>();
+                thirdplace.Add(SingleEliminationThirdPlaceFinal);
+
+                rounds.Add(thirdplace);
+            }
+
+
             List<MatchNode> lastRound = new List<MatchNode>();
             lastRound.Add(SingleEliminationFinal);
-            if ( SingleEliminationTeamEntryPoints.Count >= 4)
-            {
-                lastRound.Add(SingleEliminationThirdPlaceFinal);
-            }
+
             rounds.Add(lastRound);
             return rounds;
         }
@@ -252,6 +259,30 @@ namespace Tournament.Tournament
                     break;
                 }
             }
+        }
+
+        public void ShuffleTeams()
+        {
+            List<LeafNode> shuffle = new List<LeafNode>();
+
+            Random ran = new Random();
+            foreach (LeafNode node in SingleEliminationTeamEntryPoints)
+            { 
+                Byte[] array = new Byte[4];
+                ran.NextBytes(array);
+
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(array);
+                }
+
+                uint index = (uint)BitConverter.ToInt32(array, 0);
+
+                index = index % (uint)(shuffle.Count + 1);
+                shuffle.Insert((int)index, node);
+            }
+
+            SingleEliminationTeamEntryPoints = shuffle;
         }
     }
 }

@@ -8,3 +8,13 @@ C:\Users\JohannesWindows\source\repos\TournamentSwag\TournamentSwag\obj\Debug\To
 C:\Users\JohannesWindows\source\repos\TournamentSwag\TournamentSwag\obj\Debug\TournamentSwag.exe
 C:\Users\JohannesWindows\source\repos\TournamentSwag\TournamentSwag\obj\Debug\TournamentSwag.pdb
 C:\Users\JohannesWindows\source\repos\TournamentSwag\TournamentSwag\obj\Debug\TournamentSwag.csprojResolveAssemblyReference.cache
+C:\Users\KristofferDjupsjö\Documents\JOKRTournamentFormEdition\JOKRTournamentFormEdition\TournamentSwag\bin\Debug\TournamentSwag.exe.config
+C:\Users\KristofferDjupsjö\Documents\JOKRTournamentFormEdition\JOKRTournamentFormEdition\TournamentSwag\bin\Debug\TournamentSwag.exe
+C:\Users\KristofferDjupsjö\Documents\JOKRTournamentFormEdition\JOKRTournamentFormEdition\TournamentSwag\bin\Debug\TournamentSwag.pdb
+C:\Users\KristofferDjupsjö\Documents\JOKRTournamentFormEdition\JOKRTournamentFormEdition\TournamentSwag\obj\Debug\TournamentSwag.csprojResolveAssemblyReference.cache
+C:\Users\KristofferDjupsjö\Documents\JOKRTournamentFormEdition\JOKRTournamentFormEdition\TournamentSwag\obj\Debug\TournamentSwag.Form1.resources
+C:\Users\KristofferDjupsjö\Documents\JOKRTournamentFormEdition\JOKRTournamentFormEdition\TournamentSwag\obj\Debug\TournamentSwag.Properties.Resources.resources
+C:\Users\KristofferDjupsjö\Documents\JOKRTournamentFormEdition\JOKRTournamentFormEdition\TournamentSwag\obj\Debug\TournamentSwag.csproj.GenerateResource.Cache
+C:\Users\KristofferDjupsjö\Documents\JOKRTournamentFormEdition\JOKRTournamentFormEdition\TournamentSwag\obj\Debug\TournamentSwag.csproj.CoreCompileInputs.cache
+C:\Users\KristofferDjupsjö\Documents\JOKRTournamentFormEdition\JOKRTournamentFormEdition\TournamentSwag\obj\Debug\TournamentSwag.exe
+C:\Users\KristofferDjupsjö\Documents\JOKRTournamentFormEdition\JOKRTournamentFormEdition\TournamentSwag\obj\Debug\TournamentSwag.pdb

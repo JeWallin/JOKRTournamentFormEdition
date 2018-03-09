@@ -40,11 +40,17 @@ namespace TournamentSwag.VisualElementsCreators
                 teamName.Text = cd.GetTeam().GetTeamName();
                 teamName.Location = new Point(0, 0);
                 teamName.Size = new Size(200, height);
+                teamName.ForeColor = Color.LightGray;
+                teamName.Font = new Font("Arial", 12, FontStyle.Bold);
+               
 
                 Button teamScore = new Button();
+                teamScore.FlatStyle = FlatStyle.Flat;
+                teamScore.ForeColor = Color.LightGray;
                 teamScore.Text = "" + cd.GetScore();
                 teamScore.Location = new Point(200, 0);
                 teamScore.Size = new Size(32, height);
+                teamScore.Font = teamName.Font;
 
                 List<object> myShit = new List<object>();
                 myShit.Add(toVisualize);
@@ -93,22 +99,27 @@ namespace TournamentSwag.VisualElementsCreators
 
                     if ( winnerIs )
                     {
-                        current.BackColor = Color.LightGreen;
+                        current.BackColor = ColorTranslator.FromHtml("#658944");
                     }
                     else
                     {
-                        current.BackColor = Color.IndianRed;
+ 
+                         current.BackColor = ColorTranslator.FromHtml("#c85252");
+
+                        
                     }
                 }
                 else
                 {
                     if ( (i & 1) == 1)
                     {
-                        current.BackColor = Color.DarkGray;
+                        current.BackColor = ColorTranslator.FromHtml("#0a3936");
+
                     }
+                    
                     else
                     {
-                        current.BackColor = Color.LightBlue;
+                        current.BackColor = ColorTranslator.FromHtml("#196f61");
                     }
                 }
                 

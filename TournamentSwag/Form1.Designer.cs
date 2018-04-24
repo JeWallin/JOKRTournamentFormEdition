@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.AdminTools = new System.Windows.Forms.GroupBox();
+            this.RandomButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.RulesBox = new System.Windows.Forms.ComboBox();
@@ -40,7 +41,7 @@
             this.TeamInput = new System.Windows.Forms.TextBox();
             this.AddTeam = new System.Windows.Forms.Button();
             this.TournamentBox = new System.Windows.Forms.GroupBox();
-            this.RandomButton = new System.Windows.Forms.Button();
+            this.switchThemeBtn = new System.Windows.Forms.Button();
             this.AdminTools.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             // 
             this.AdminTools.AccessibleDescription = "AdminTools";
             this.AdminTools.AccessibleName = "AdminTools";
+            this.AdminTools.Controls.Add(this.switchThemeBtn);
             this.AdminTools.Controls.Add(this.RandomButton);
             this.AdminTools.Controls.Add(this.button1);
             this.AdminTools.Controls.Add(this.label4);
@@ -67,6 +69,18 @@
             this.AdminTools.TabIndex = 0;
             this.AdminTools.TabStop = false;
             this.AdminTools.Text = "Interface";
+            // 
+            // RandomButton
+            // 
+            this.RandomButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(137)))), ((int)(((byte)(68)))));
+            this.RandomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RandomButton.Location = new System.Drawing.Point(5, 306);
+            this.RandomButton.Name = "RandomButton";
+            this.RandomButton.Size = new System.Drawing.Size(158, 35);
+            this.RandomButton.TabIndex = 15;
+            this.RandomButton.Text = "Randomize Teams";
+            this.RandomButton.UseVisualStyleBackColor = false;
+            this.RandomButton.Click += new System.EventHandler(this.RandomButton_Click);
             // 
             // button1
             // 
@@ -208,17 +222,15 @@
             this.TournamentBox.TabStop = false;
             this.TournamentBox.Text = "Tournamnet";
             // 
-            // RandomButton
+            // switchThemeBtn
             // 
-            this.RandomButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(137)))), ((int)(((byte)(68)))));
-            this.RandomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RandomButton.Location = new System.Drawing.Point(5, 306);
-            this.RandomButton.Name = "RandomButton";
-            this.RandomButton.Size = new System.Drawing.Size(158, 35);
-            this.RandomButton.TabIndex = 15;
-            this.RandomButton.Text = "Randomize Teams";
-            this.RandomButton.UseVisualStyleBackColor = false;
-            this.RandomButton.Click += new System.EventHandler(this.RandomButton_Click);
+            this.switchThemeBtn.Location = new System.Drawing.Point(0, 659);
+            this.switchThemeBtn.Name = "switchThemeBtn";
+            this.switchThemeBtn.Size = new System.Drawing.Size(163, 35);
+            this.switchThemeBtn.TabIndex = 16;
+            this.switchThemeBtn.Text = "Change Theme";
+            this.switchThemeBtn.UseVisualStyleBackColor = true;
+            this.switchThemeBtn.Click += new System.EventHandler(this.switchThemeBtn_Click);
             // 
             // Form1
             // 
@@ -252,6 +264,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button RandomButton;
+        private System.Windows.Forms.Button switchThemeBtn;
     }
 }
 

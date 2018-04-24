@@ -7,6 +7,7 @@ using Tournament.Team;
 using Tournament.Nodes;
 using System.Windows.Forms;
 using System.Drawing;
+using TournamentSwag.ColorHelper;
 
 namespace TournamentSwag.VisualElementsCreators
 {
@@ -14,10 +15,19 @@ namespace TournamentSwag.VisualElementsCreators
     public static class MatchVisualizer
     {
         private static Form1 Parent;
+        static ColorHandler colorFactory;
+        static ColorTheme colors;
 
         public static void SetParent(Form1 parent)
         {
             Parent = parent;
+
+            // Laddar in färgerna, kanke inte rätt ställe att göra så ? 
+            colorFactory = ColorHandler.Instance;
+
+            colors = colorFactory.GetColorTheme();
+
+
         }
         public static Control CreateVisualElement(MatchNode toVisualize)
         {
@@ -99,13 +109,14 @@ namespace TournamentSwag.VisualElementsCreators
 
                     if ( winnerIs )
                     {
-                        current.BackColor = ColorTranslator.FromHtml("#658944");
+                        //current.BackColor = ColorTranslator.FromHtml("#658944");
+                        current.BackColor = colors.colorTwo;
                     }
                     else
                     {
- 
-                         current.BackColor = ColorTranslator.FromHtml("#c85252");
 
+                        //current.BackColor = ColorTranslator.FromHtml("#c85252");
+                        current.BackColor = colors.colorThree;
                         
                     }
                 }
@@ -113,13 +124,14 @@ namespace TournamentSwag.VisualElementsCreators
                 {
                     if ( (i & 1) == 1)
                     {
-                        current.BackColor = ColorTranslator.FromHtml("#0a3936");
-
+                        //current.BackColor = ColorTranslator.FromHtml("#0a3936");
+                        current.BackColor = colors.colorFour;
                     }
                     
                     else
                     {
-                        current.BackColor = ColorTranslator.FromHtml("#196f61");
+                        current.BackColor = colors.colorFive;
+                        //current.BackColor = ColorTranslator.FromHtml("#196f61");
                     }
                 }
                 

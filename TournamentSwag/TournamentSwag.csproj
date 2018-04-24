@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BestOf.cs" />
+    <Compile Include="ColorHelper\ColorHandler.cs" />
+    <Compile Include="ColorHelper\ColorTheme.cs" />
     <Compile Include="Competitor.cs" />
     <Compile Include="CompetitorData.cs" />
     <Compile Include="DummyRule.cs" />

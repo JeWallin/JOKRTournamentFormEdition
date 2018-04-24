@@ -12,12 +12,17 @@ using Tournament.Team;
 using Tournament.Nodes;
 using Tournament.Rule;
 using TournamentSwag.VisualElementsCreators;
+using TournamentSwag.ColorHelper;
 
 namespace TournamentSwag
 {
     public partial class Form1 : Form
     {
         SingleElimination tournament;
+        ColorHandler colorFactory;
+        ColorTheme colors;
+
+
         public Form1()
         {
             tournament = new SingleElimination();
@@ -33,20 +38,86 @@ namespace TournamentSwag
             RulesBox.Items.Add(bestof3);
             RulesBox.Items.Add(BestOf5);
             MatchVisualizer.SetParent(this);
+
+
+            //Set current colors for application
+            colorFactory = ColorHandler.Instance;
+            colors = colorFactory.GetColorTheme();
+
+
+        }
+
+        private void UpdateTheme()
+        {
+            BackColor = colors.colorOne;
+            AddTeam.BackColor = colors.colorTwo;
+            deleteTeamBtn.BackColor = colors.colorTwo;
+            RandomButton.BackColor = colors.colorTwo;
+            GenerateTournament.BackColor = colors.colorTwo;
+            button1.BackColor = colors.colorTwo;
+            switchThemeBtn.BackColor = colors.colorTwo;
+
         }
 
         private void AddTeam_Click(object sender, EventArgs e)
         {
             var teamInput = AdminTools.Controls.Find("TeamInput", true).FirstOrDefault();
 
-            Competitor competitor = new Competitor(teamInput.Text);
-            LeafNode leafNode = new LeafNode(competitor);
+            if (ValidateTeamName(teamInput.Text))
+            {
 
-  
-            tournament.AddLeafNode(leafNode);
-            MegaUpdate();
+                Competitor competitor = new Competitor(teamInput.Text);
+                LeafNode leafNode = new LeafNode(competitor);
 
-            teamInput.Text = "";
+
+                tournament.AddLeafNode(leafNode);
+                MegaUpdate();
+                teamInput.Text = "";
+            }  else
+            {
+                MessageBox.Show("Invalid teamname. Teamname either blank, too long or already exists.", "Invalid teamname",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+          
+        }
+
+        private bool ValidateTeamName( string name )
+        {
+            bool output = true;
+
+            if (name == "" || name == null )
+            {
+                output = false;
+            }
+            if ( SameEntryTeamExits(name) )
+            {
+                output = false; 
+            }
+            if ( name.Length > 10 )
+            {
+                output = false; 
+            }
+
+            return output;
+        }
+
+        private bool SameEntryTeamExits( string teamName)
+        {
+            bool output = false;
+
+            List<LeafNode> listofNodes = tournament.GetTournamentLeafNodes();
+
+            foreach (LeafNode node in listofNodes)
+            {
+                if (node.GetCompeditor(0).GetTeamName() == teamName)
+                {
+                    output = true;
+                    break;
+                }
+            }
+
+            return output; 
         }
 
         private void UpDateTeamList()
@@ -148,7 +219,8 @@ namespace TournamentSwag
                         renderBox.Text = match.ToString();
                         if ( match.IsGameActive())
                         {
-                            renderBox.BackColor = ColorTranslator.FromHtml("#658944");
+                            //renderBox.BackColor = ColorTranslator.FromHtml("#658944");
+                            renderBox.BackColor = colors.colorTwo;
                         }
                         else
                         {
@@ -218,6 +290,29 @@ namespace TournamentSwag
         private void RulesBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void switchThemeBtn_Click(object sender, EventArgs e)
+        {
+            int theme;
+            ColorHandler.ColorType currentTheme = colorFactory.GetCurrentThemeType();
+            Random rnd = new Random();
+
+
+            while (true)
+            {
+                theme = rnd.Next(0, 4);
+                if (currentTheme != (ColorHandler.ColorType)theme)
+                {
+                    break;
+                }
+            }
+            
+
+            colorFactory.SetColorScheme((ColorHandler.ColorType)theme);
+
+            MegaUpdate();
+            UpdateTheme();
         }
     }
 }
